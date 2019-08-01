@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+</head>
+<body>
+
+	
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-12 mt-5">
+				<h2 class="text-center">Empleados</h2>
+			</div>
+			<div class="col-12 text-center mt-3">
+				<a th:href="@{/saveEmpleados/{id}(id=${delear})}" class="btn btn-success">+</a>	
+			</div>
+		</div>	
+		
+	</div>
+	<div class="container " th:switch="${list}">
+		<h4 th:case="null">No hay empleados registrados</h4>
+		<div th:case="*">
+
+			<table class="table">
+			  <thead>
+			    <tr>
+			      <th scope="col">Nombre</th>
+			      <th scope="col">Apellido</th>
+			      <th scope="col">Tipo</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr th:each="employee: ${list}">
+			      <td th:text="${employee.name}">
+				  <td th:text="${employee.lastname}">
+				  <td th:text="${employee.type}">
+			    </tr>
+			  </tbody>
+			</table>
+		</div>	
+	</div>
