@@ -3,8 +3,6 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'gcr.io/smart-tangent-248502/gcp-cloudbuild-gce-angular', '.' ]
 
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: [ 'beta', 'compute', 'instance-groups', 'managed', 'rolling-action', 'restart', 'gce-angular-instance-group', '--zone=us-east1-b' ]
 
 
 images:
