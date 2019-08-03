@@ -9,4 +9,4 @@ steps:
 
 images:
 
-- 'gcr.io/$PROJECT_ID/gcp-cloudbuild-gce-angular'
+- 'gcr.io/smart-tangent-248502/gcp-cloudbuild-gce-angular'
