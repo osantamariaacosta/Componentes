@@ -3,6 +3,8 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'gcr.io/igneous-sum-248020/gcp-cloudbuild-gce-angular', '.' ]
 
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: [ 'compute', 'instance-groups', 'managed', 'rolling-action', 'restart', '<instance-group-name>', '--zone=<zone>' ]
 
 
 images:
